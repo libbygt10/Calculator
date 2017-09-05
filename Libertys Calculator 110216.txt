@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		
+	</head>
+	<body>
+		<div>
+			Number: <span id="number"></span><br>
+			Memory: <span id="memory"></span><br>
+			Operator: <span id="operator"></span>
+		</div>
+		<div id="calcumalator">
+			<button onClick="pressNumber(7)">7</button>
+			<button onClick="pressNumber(8)">8</button>
+			<button onClick="pressNumber(9)">9</button><br>
+			<button onClick="pressNumber(4)">4</button>
+			<button onClick="pressNumber(5)">5</button>
+			<button onClick="pressNumber(6)">6</button><br>
+			<button onClick="pressNumber(1)">1</button>
+			<button onClick="pressNumber(2)">2</button>
+			<button onClick="pressNumber(3)">3</button>			
+			<button onClick="pressOperator()">+</button>
+			<button onClick="pressEquals()">=</button>
+		</div>
+		
+		
+		<script>
+			num = 0;
+			mem = 0;
+			operator = "";
+			
+			function draw(){
+			
+				document.getElementById("number").innerHTML = num;
+				document.getElementById("memory").innerHTML = mem;
+				document.getElementById("operator").innerHTML = operator;
+			}
+			
+			function pressNumber(number) {
+				num = num * 10;
+				num += number;
+				draw();
+			}
+			
+			function pressOperator() {
+				operator = "+";
+				mem = num;
+				num = 0;
+				draw();
+			}
+			
+			function pressEquals() {
+				switch(operator) {
+					case "+":
+						num = num + mem;
+						mem = 0;
+						operator = "";
+						break;
+				
+				}
+				draw();
+			}
+		</script>
+	</body>
+</html>
