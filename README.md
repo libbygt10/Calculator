@@ -1,3 +1,3 @@
 # Calculator
 
-Very, very basic calculator created with Javascript.
+Very, very basic calculator that I created with Javascript.
